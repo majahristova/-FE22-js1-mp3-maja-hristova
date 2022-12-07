@@ -21,7 +21,7 @@ body {
 
     width: 20rem;
     height: 15rem;
-    border:  2px white solid;
+    border:  2px white  solid;
     display: flex;
     flex-direction: column;
     row-gap: 3rem;

@@ -35,8 +35,9 @@ function fetchcountrylist(lang) {
 
 function showlanginfo(data) {
 
-    data.sort((a, b) =>b.population-a.population);
 
+    data.sort((a, b) =>b.population-a.population);
+ 
     container.innerHTML ='';
     er.innerText =''; 
 
@@ -46,7 +47,7 @@ function showlanginfo(data) {
         container.appendChild(countrydiv);
 
         populationArr.push(data[i].population);
-
+        console.log(data)
 
         const name = document.createElement('h3');
         countrydiv.appendChild(name);
@@ -73,16 +74,17 @@ function showlanginfo(data) {
         img.src = data[i].flags.png;
 
 
+
     }
     
-    const max = Math.max(...populationArr);
-    const populationunique = populationArr.indexOf(max);
-    const populationstyle = document.querySelectorAll('h5'); 
-    
-    populationstyle[populationunique].style.border ="2px solid black";
+
+    const biggestPopulationStyle = document.querySelector('h5'); 
+
+    biggestPopulationStyle.style.border ="2px solid black";
 }
 
 function displayerrormessage(error) {
     er.innerText = error;
+    container.innerHTML ='';
 
 }
